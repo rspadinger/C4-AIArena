@@ -1,30 +1,4 @@
-Examples:
-=========
 
-https://code4rena.com/reports/2023-10-party#h-02-single-host-can-unfairly-skip-veto-period-for-proposal-that-does-not-have-full-host-support
-https://code4rena.com/reports/2023-10-nextgen#low-risk-and-non-critical-issues
-https://code4rena.com/reports/2023-10-nextgen#h-01-attacker-can-reenter-to-mint-all-the-collection-supply
-
-
-Risk:
-Issue Type:
-Title:
-Links: 
-
-## Impact
-Detailed description of the impact of this finding.
-
-## Proof of Concept
-Provide direct links to all referenced code in GitHub. Add screenshots, logs, or any other relevant proof that illustrates the concept.
-
-## Tools Used
-Manual Review
-
-## Recommended Mitigation Steps
-
-**************************************************************************************************************
-
-    
 Risk: Medium
 Issue Type:
 Title: RankedBattle::updateBattleRecord can be called several times for the same round and tokenId 
@@ -251,11 +225,4 @@ In the second for-loop of the claimRewards() function, after the verification (i
 bytes32 msgHash = bytes32(keccak256(abi.encode(msg.sender, modelURIs[i], modelTypes[i], customAttributes[i])));          
 require(Verification.verify(msgHash, signatures[i], _delegatedAddress));
 ```
-
-
-
-
-
-
-
 
