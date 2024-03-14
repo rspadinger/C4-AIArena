@@ -1,9 +1,13 @@
 
-Risk: Medium
-Issue Type:
-Title: RankedBattle::updateBattleRecord can be called several times for the same round and tokenId 
-Links: 
-https://github.com/code-423n4/2024-02-ai-arena/blob/cd1a0e6d1b40168657d1aaee8223dc050e15f8cc/src/RankedBattle.sol#L322
+# M01 - RankedBattle::updateBattleRecord can be called several times for the same round and tokenId 
+
+## Risk: Medium
+
+## Issue Type:
+
+## Title: RankedBattle::updateBattleRecord can be called several times for the same round and tokenId 
+
+## Links: https://github.com/code-423n4/2024-02-ai-arena/blob/cd1a0e6d1b40168657d1aaee8223dc050e15f8cc/src/RankedBattle.sol#L322
 
 ## Impact
 
@@ -64,13 +68,15 @@ require(!updateBattleRecordAlreadyCalled[roundId][tokenId], "update already call
 ```
 
 
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+# M02 - StakeAtRisk::_sweepLostStake : Stuck NRN can't be recovered from the contract
 
+## Risk: Medium
 
-Risk: Medium
-Issue Type:
-Title: StakeAtRisk::_sweepLostStake : Stuck NRN can't be recovered from the contract 
-Links: https://github.com/code-423n4/2024-02-ai-arena/blob/cd1a0e6d1b40168657d1aaee8223dc050e15f8cc/src/StakeAtRisk.sol#L143
+## Issue Type:
+
+## Title: StakeAtRisk::_sweepLostStake : Stuck NRN can't be recovered from the contract 
+
+## Links: https://github.com/code-423n4/2024-02-ai-arena/blob/cd1a0e6d1b40168657d1aaee8223dc050e15f8cc/src/StakeAtRisk.sol#L143
 
 
 ## Impact
@@ -139,14 +145,15 @@ Make the following modification in the _sweepLostStake() function:
 Or, add a withraw() function to the contract that allows the admin to recover any stuck funds.
 
 
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+# M03 - FighterFarm::updateModel : A player can retrieve modelHash and modelType from most successful fighter NFT and use them for their own fighter NFT
 
+## Risk: Medium
 
+## Issue Type:
 
-Risk: Medium
-Issue Type:
-Title: FighterFarm::updateModel : A player can retrieve modelHash and modelType from most successful fighter NFT and use them for their own fighter NFT  
-Links: https://github.com/code-423n4/2024-02-ai-arena/blob/cd1a0e6d1b40168657d1aaee8223dc050e15f8cc/src/FighterFarm.sol#L283
+## Title: FighterFarm::updateModel : A player can retrieve modelHash and modelType from most successful fighter NFT and use them for their own fighter NFT  
+
+## Links: https://github.com/code-423n4/2024-02-ai-arena/blob/cd1a0e6d1b40168657d1aaee8223dc050e15f8cc/src/FighterFarm.sol#L283
 
 
 ## Impact
@@ -188,14 +195,15 @@ require(keccak256(abi.encodePacked(fighterHash[tokenId])) == keccak256(abi.encod
 ```
 
 
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+# M04 - MergingPool::claimRewards : User can provide whatever model data and customAttributes he wants for the reward NFTs
 
+## Risk: Medium
 
+## Issue Type:
 
-Risk: Medium
-Issue Type:
-Title: MergingPool::claimRewards : User can provide whatever model data and customAttributes he wants for the reward NFTs  
-Links: https://github.com/code-423n4/2024-02-ai-arena/blob/cd1a0e6d1b40168657d1aaee8223dc050e15f8cc/src/MergingPool.sol#L139
+## Title: MergingPool::claimRewards : User can provide whatever model data and customAttributes he wants for the reward NFTs  
+
+## Links: https://github.com/code-423n4/2024-02-ai-arena/blob/cd1a0e6d1b40168657d1aaee8223dc050e15f8cc/src/MergingPool.sol#L139
 
 
 ## Impact
